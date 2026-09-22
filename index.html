@@ -2,6 +2,8 @@
 
 <html lang="en">
 <head>
+<!-- ICHIBANYA V29: stray opening-time overlay physically removed -->
+<meta name="ichibanya-version" content="v29"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <title>Ichibanya — Premium Concept</title>
@@ -1231,7 +1233,6 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
 
 
 <div aria-hidden="true" class="opening-hours-cover" id="opening-hours-details"></div>
-<div aria-hidden="true" class="opening-today-time" id="opening-today-time">12:30 – 9:30 pm</div>
 <a aria-label="Open menu" class="hotspot hot-menu" href="#nav"></a>
 <a aria-label="Login to account" class="hot-login" href="#login"></a>
 <a aria-label="Order online" class="hotspot hot-order" href="https://ichibanyasushiandnoodlesbar.ie/ichibanya-sushi-and-noodles-bar"></a>
@@ -1950,10 +1951,7 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
   var art=document.querySelector('.hero-art');
   var rowToggle=document.querySelector('.opening-hours-toggle');
   var iconToggle=document.querySelector('.opening-hours-toggle-icon');
-  var today=document.getElementById('opening-today-time');
   if(!hero||!art||!rowToggle) return;
-  var hours={0:'12:30 – 9:30 pm',1:'12:30 – 9:30 pm',2:'12:30 – 9:30 pm',3:'12:30 – 9:30 pm',4:'12:30 – 9:30 pm',5:'12:30 – 10:00 pm',6:'12:30 – 10:00 pm'};
-  if(today) today.textContent=hours[new Date().getDay()]||'12:30 – 9:30 pm';
   function setOpen(open){
     hero.classList.toggle('hours-open',open);
     art.src=open?art.getAttribute('data-expanded-src'):art.getAttribute('data-collapsed-src');
@@ -1993,8 +1991,8 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
 })();
 </script>
 
-<style id="ichibanya-v28-hero-photo-glow">
-/* V28 — only add a clearly visible warm glow to the homepage hero photo/sign. */
+<style id="ichibanya-v29-hero-photo-glow">
+/* V29 — stronger visible warm glow to the homepage hero photo/sign. */
 .hero-exact{
   box-shadow:0 0 0 1px rgba(194,146,83,.35),0 0 26px rgba(255,178,82,.16),0 0 64px rgba(255,133,28,.10)!important;
   animation:ichibanyaHeroFrameGlowV28 3.4s ease-in-out infinite alternate!important;
@@ -2010,10 +2008,10 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
   inset:-4% -8%!important;
   z-index:2.05!important;
   background:
-    radial-gradient(circle at 18% 28%,rgba(255,225,169,.26) 0 10%,rgba(255,198,112,.12) 22%,transparent 40%),
-    radial-gradient(circle at 83% 24%,rgba(255,214,143,.18) 0 10%,rgba(255,170,74,.08) 24%,transparent 42%),
-    radial-gradient(circle at 52% 52%,rgba(255,188,84,.12) 0 14%,transparent 44%),
-    radial-gradient(circle at 70% 64%,rgba(255,214,130,.10) 0 10%,transparent 35%)!important;
+    radial-gradient(circle at 18% 28%,rgba(255,225,169,.38) 0 10%,rgba(255,198,112,.20) 22%,transparent 40%),
+    radial-gradient(circle at 83% 24%,rgba(255,214,143,.30) 0 10%,rgba(255,170,74,.15) 24%,transparent 42%),
+    radial-gradient(circle at 52% 52%,rgba(255,188,84,.20) 0 14%,transparent 44%),
+    radial-gradient(circle at 70% 64%,rgba(255,214,130,.18) 0 10%,transparent 35%)!important;
   mix-blend-mode:screen!important;
   filter:blur(12px)!important;
   animation:ichibanyaHeroPhotoGlowV28 2.7s ease-in-out infinite alternate!important;
@@ -2024,7 +2022,7 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
   left:-46%!important;
   width:40%!important;
   z-index:2.12!important;
-  background:linear-gradient(102deg,transparent 14%,rgba(255,236,198,.04) 31%,rgba(255,220,160,.30) 47%,rgba(255,247,223,.68) 52%,rgba(255,211,122,.18) 58%,transparent 76%)!important;
+  background:linear-gradient(102deg,transparent 14%,rgba(255,236,198,.04) 31%,rgba(255,220,160,.30) 47%,rgba(255,247,223,.88) 52%,rgba(255,211,122,.18) 58%,transparent 76%)!important;
   filter:blur(9px)!important;
   transform:skewX(-12deg)!important;
   mix-blend-mode:screen!important;
@@ -2035,7 +2033,7 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
 }
 .hero-sign-motion::before{
   inset:-20% -39%!important;
-  background:linear-gradient(104deg,transparent 20%,rgba(255,236,191,.10) 34%,rgba(255,223,156,.58) 46%,rgba(255,248,224,.96) 51%,rgba(255,216,129,.46) 57%,transparent 72%)!important;
+  background:linear-gradient(104deg,transparent 20%,rgba(255,236,191,.10) 34%,rgba(255,223,156,.72) 46%,rgba(255,248,224,1) 51%,rgba(255,216,129,.46) 57%,transparent 72%)!important;
   filter:blur(4px)!important;
   animation:ichibanyaStoreSignSweepV28 3.05s ease-in-out infinite!important;
 }
@@ -2050,8 +2048,8 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
   100%{box-shadow:0 0 0 1px rgba(226,178,113,.48),0 0 34px rgba(255,196,110,.24),0 0 84px rgba(255,149,41,.18)}
 }
 @keyframes ichibanyaHeroPhotoGlowV28{
-  0%{opacity:.56;transform:scale(1)}
-  100%{opacity:.96;transform:scale(1.03)}
+  0%{opacity:.70;transform:scale(1)}
+  100%{opacity:1;transform:scale(1.035)}
 }
 @keyframes ichibanyaHeroPhotoSweepV28{
   0%,12%{transform:translateX(-8%) skewX(-12deg);opacity:0}
@@ -2076,5 +2074,6 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
   .hero-exact::before{opacity:.72!important}
   .hero-exact::after{opacity:.30!important;transform:translateX(110%) skewX(-12deg)!important}
 }
+.opening-today-time,#opening-today-time{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
 </style>
 </body></html>
