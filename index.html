@@ -1970,20 +1970,6 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
   setOpen(false);
 })();
 </script>
-<script id="ichibanya-v17-day-time-overlay">
-(function(){
-  var hero=document.querySelector('.hero-exact');
-  if(!hero) return;
-  var day=(new Date()).getDay();
-  if(day===1) return; // Reference artwork already shows Monday's 9:30 pm close exactly.
-  var hours={0:'12:30 – 9:30 pm',1:'12:30 – 9:30 pm',2:'12:30 – 9:30 pm',3:'12:30 – 9:30 pm',4:'12:30 – 9:30 pm',5:'12:30 – 10:00 pm',6:'12:30 – 10:00 pm'};
-  var el=document.createElement('div');
-  el.textContent=hours[day]||hours[1];
-  el.setAttribute('aria-hidden','true');
-  el.style.cssText='position:absolute;z-index:38;left:34.7%;top:75.93%;width:29%;height:2.4%;display:flex;align-items:center;background:#1b100b;color:#ece0cd;font:500 clamp(10px,2.1vw,16px)/1 Arial,sans-serif;white-space:nowrap;pointer-events:none';
-  hero.appendChild(el);
-})();
-</script>
 <script id="ichibanya-v21-contact-exact-script">
 (function(){
   var form=document.getElementById('contact-exact-form');
@@ -2007,4 +1993,88 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
 })();
 </script>
 
+<style id="ichibanya-v28-hero-photo-glow">
+/* V28 — only add a clearly visible warm glow to the homepage hero photo/sign. */
+.hero-exact{
+  box-shadow:0 0 0 1px rgba(194,146,83,.35),0 0 26px rgba(255,178,82,.16),0 0 64px rgba(255,133,28,.10)!important;
+  animation:ichibanyaHeroFrameGlowV28 3.4s ease-in-out infinite alternate!important;
+}
+.hero-exact::before,
+.hero-exact::after{
+  content:""!important;
+  position:absolute!important;
+  display:block!important;
+  pointer-events:none!important;
+}
+.hero-exact::before{
+  inset:-4% -8%!important;
+  z-index:2.05!important;
+  background:
+    radial-gradient(circle at 18% 28%,rgba(255,225,169,.26) 0 10%,rgba(255,198,112,.12) 22%,transparent 40%),
+    radial-gradient(circle at 83% 24%,rgba(255,214,143,.18) 0 10%,rgba(255,170,74,.08) 24%,transparent 42%),
+    radial-gradient(circle at 52% 52%,rgba(255,188,84,.12) 0 14%,transparent 44%),
+    radial-gradient(circle at 70% 64%,rgba(255,214,130,.10) 0 10%,transparent 35%)!important;
+  mix-blend-mode:screen!important;
+  filter:blur(12px)!important;
+  animation:ichibanyaHeroPhotoGlowV28 2.7s ease-in-out infinite alternate!important;
+}
+.hero-exact::after{
+  top:-10%!important;
+  bottom:-10%!important;
+  left:-46%!important;
+  width:40%!important;
+  z-index:2.12!important;
+  background:linear-gradient(102deg,transparent 14%,rgba(255,236,198,.04) 31%,rgba(255,220,160,.30) 47%,rgba(255,247,223,.68) 52%,rgba(255,211,122,.18) 58%,transparent 76%)!important;
+  filter:blur(9px)!important;
+  transform:skewX(-12deg)!important;
+  mix-blend-mode:screen!important;
+  animation:ichibanyaHeroPhotoSweepV28 4.4s ease-in-out infinite!important;
+}
+.hero-sign-motion{
+  filter:drop-shadow(0 0 10px rgba(255,219,155,.32)) drop-shadow(0 0 24px rgba(255,178,75,.26))!important;
+}
+.hero-sign-motion::before{
+  inset:-20% -39%!important;
+  background:linear-gradient(104deg,transparent 20%,rgba(255,236,191,.10) 34%,rgba(255,223,156,.58) 46%,rgba(255,248,224,.96) 51%,rgba(255,216,129,.46) 57%,transparent 72%)!important;
+  filter:blur(4px)!important;
+  animation:ichibanyaStoreSignSweepV28 3.05s ease-in-out infinite!important;
+}
+.hero-sign-motion::after{
+  inset:7% 1%!important;
+  background:radial-gradient(ellipse at center,rgba(255,230,177,.54),rgba(255,203,95,.24) 48%,transparent 75%)!important;
+  filter:blur(12px)!important;
+  animation:ichibanyaStoreSignPulseV28 1.7s ease-in-out infinite alternate!important;
+}
+@keyframes ichibanyaHeroFrameGlowV28{
+  0%{box-shadow:0 0 0 1px rgba(194,146,83,.30),0 0 18px rgba(255,178,82,.12),0 0 44px rgba(255,133,28,.08)}
+  100%{box-shadow:0 0 0 1px rgba(226,178,113,.48),0 0 34px rgba(255,196,110,.24),0 0 84px rgba(255,149,41,.18)}
+}
+@keyframes ichibanyaHeroPhotoGlowV28{
+  0%{opacity:.56;transform:scale(1)}
+  100%{opacity:.96;transform:scale(1.03)}
+}
+@keyframes ichibanyaHeroPhotoSweepV28{
+  0%,12%{transform:translateX(-8%) skewX(-12deg);opacity:0}
+  26%{opacity:.32}
+  44%{opacity:.86}
+  62%{opacity:.24}
+  76%,100%{transform:translateX(315%) skewX(-12deg);opacity:0}
+}
+@keyframes ichibanyaStoreSignSweepV28{
+  0%,10%{transform:translateX(-46%) skewX(-10deg);opacity:0}
+  30%{opacity:.56}
+  47%{opacity:1}
+  62%{opacity:.26}
+  78%,100%{transform:translateX(245%) skewX(-10deg);opacity:0}
+}
+@keyframes ichibanyaStoreSignPulseV28{
+  0%{opacity:.36;transform:scale(.985)}
+  100%{opacity:.88;transform:scale(1.04)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-exact,.hero-exact::before,.hero-exact::after,.hero-sign-motion::before,.hero-sign-motion::after{animation:none!important}
+  .hero-exact::before{opacity:.72!important}
+  .hero-exact::after{opacity:.30!important;transform:translateX(110%) skewX(-12deg)!important}
+}
+</style>
 </body></html>
