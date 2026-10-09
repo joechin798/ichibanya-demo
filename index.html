@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <!-- ICHIBANYA V29: stray opening-time overlay physically removed -->
-<meta name="ichibanya-version" content="v29"/>
+<meta name="ichibanya-version" content="v37"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <title>Ichibanya — Premium Concept</title>
@@ -1327,6 +1327,116 @@ body.contact-page-open #ichibanya-back-to-top{opacity:0!important;visibility:hid
 }
 .hot-login,.hot-menu{animation:none!important;transform:none!important;filter:none!important}
 </style>
+
+<style id="ichibanya-v37-desktop-responsive">
+/* V37 — desktop/tablet responsive layer only. Mobile layout remains untouched. */
+@media (min-width:900px){
+  html{background:#070808!important;}
+  body{
+    width:min(100%,1100px)!important;
+    max-width:1100px!important;
+    margin:0 auto!important;
+    box-shadow:0 0 110px rgba(0,0,0,.68)!important;
+  }
+  .hero-exact{
+    width:100%!important;
+    max-width:none!important;
+    margin:0 auto!important;
+  }
+  .hero-art{
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    margin:0!important;
+  }
+
+  .favourites-live{padding:72px 0 54px!important;}
+  .fav-head{
+    max-width:1040px!important;
+    margin:0 auto!important;
+    padding:0 34px 26px!important;
+  }
+  .fav-head h2{font-size:56px!important;max-width:700px!important;}
+  .fav-head p{max-width:720px!important;font-size:17px!important;}
+  .fav-row{
+    width:100%!important;
+    max-width:1040px!important;
+    margin:0 auto!important;
+    padding:12px 34px 18px!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:18px!important;
+    overflow:visible!important;
+    scroll-snap-type:none!important;
+  }
+  .fav-card{
+    width:100%!important;
+    min-width:0!important;
+    flex:none!important;
+    aspect-ratio:.78!important;
+    border-radius:24px!important;
+  }
+  .fav-copy strong{font-size:34px!important;}
+  .fav-tap{font-size:9px!important;padding:9px 11px!important;}
+  .fav-swipe{display:none!important;}
+
+  .section{padding:84px 46px!important;}
+  .section h2{font-size:56px!important;max-width:760px!important;}
+  .sub{font-size:17px!important;max-width:720px!important;}
+  .menu-pair{gap:20px!important;max-width:1000px!important;margin:30px auto 0!important;}
+  .menu-card{border-radius:26px!important;}
+
+  .community{padding:82px 46px!important;}
+  .community h2{font-size:54px!important;max-width:760px!important;}
+  .video-row{
+    width:100%!important;
+    max-width:1000px!important;
+    margin:30px auto 0!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:18px!important;
+    overflow:visible!important;
+    scroll-snap-type:none!important;
+  }
+  .video-card{
+    width:100%!important;
+    min-width:0!important;
+    flex:none!important;
+    aspect-ratio:9/14!important;
+    border-radius:24px!important;
+  }
+  .community .swipe{display:none!important;}
+
+  #reviews.reviews-native{padding:78px 46px 62px!important;}
+  .reviews-native-inner{max-width:1000px!important;}
+  .reviews-head h2{font-size:60px!important;}
+  .review-cards-native{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:20px!important;
+  }
+  .review-native-card{height:100%!important;}
+  .review-native-card blockquote{font-size:20px!important;}
+
+  #location.section{padding-top:84px!important;}
+  .location-card{
+    max-width:1000px!important;
+    margin:30px auto 0!important;
+    grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr)!important;
+    align-items:stretch!important;
+  }
+  .location-card img{height:100%!important;min-height:390px!important;object-fit:cover!important;}
+  .loc-copy{padding:34px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;}
+  .loc-copy h3{font-size:36px!important;}
+  .footer{padding-left:46px!important;padding-right:46px!important;}
+}
+
+@media (min-width:1200px){
+  body{width:min(100%,1180px)!important;max-width:1180px!important;}
+  .fav-head,.fav-row{max-width:1120px!important;}
+  .menu-pair,.video-row,.reviews-native-inner,.location-card{max-width:1060px!important;}
+}
+</style>
+
 </head>
 <body>
 <div aria-hidden="true" class="door-intro"><div class="door-top-fill left"></div><div class="door-top-fill right"></div><div class="door left"></div><div class="door right"></div><div class="door-seal">一番屋</div><div class="door-welcome"><span>Welcome to</span><strong>Ichibanya Sushi and Noodles Bar</strong></div></div>
